@@ -1,6 +1,6 @@
 {
   "name": "wsfs",
-  "version": "0.1.600",
+  "version": "0.1.602",
   "private": true,
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.23.9",

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwsfs=self.webpackChunkwsfs||[]).push([[2900],{95280:(e,r,c)=>{c.d(r,{c:()=>a});var n=c(45072),u=c(23132),f=c.n(u),s=c(19104);function a(e,r){var c=function(r,c){return f().createElement(s.c,(0,n.c)({ref:c},r),e)};return c.muiName=s.c.muiName,f().memo(f().forwardRef(c))}}}]);

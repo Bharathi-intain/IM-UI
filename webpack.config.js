@@ -12,14 +12,14 @@ const { GenerateSW } = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: "./src/index",
-  mode: "development",
-  devServer :{
-    port: 3000,
-    historyApiFallback: true,
-    static: {
-      directory: path.join(__dirname, "public"),
-    },
-  },
+  mode: "production",
+  // devServer :{
+  //   port: 3000,
+  //   historyApiFallback: true,
+  //   static: {
+  //     directory: path.join(__dirname, "public"),
+  //   },
+  // },
   output: {
     filename: '[name].bundle.js', 
     path: path.resolve(__dirname, 'build'),
@@ -88,8 +88,8 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "Host",
       remotes: {
-        // Remote: `Remote@https://gva-ui.intainva.intainabs.com/moduleEntry.js`,
-        Remote: `Remote@http://localhost:4000/moduleEntry.js`,
+        Remote: `Remote@https://gva-ui.intainva.intainabs.com/moduleEntry.js`,
+        // Remote: `Remote@http://localhost:4000/moduleEntry.js`,
     },
   
       shared: {  
@@ -120,12 +120,12 @@ module.exports = {
     }),
     new WebpackManifestPlugin(),
     new Dotenv(),
-    // new GenerateSW({
-    //   // Workbox GenerateSW plugin configuration
-    //   clientsClaim: true,
-    //   skipWaiting: true,
-    //   maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
-    // }),
+    new GenerateSW({
+      // Workbox GenerateSW plugin configuration
+      clientsClaim: true,
+      skipWaiting: true,
+      maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
+    }),
   ],
   resolve: {
     extensions: [".js", ".jsx", ".scss", ".css"],
