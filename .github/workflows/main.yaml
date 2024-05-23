@@ -84,7 +84,7 @@ jobs:
         username: ${{ secrets.MAIL_USERNAME }}
         password: ${{ secrets.MAIL_PASSWORD }}
         subject: Deployment success in IM-UI
-        to: bharathi.m@intainft.com,narayanan.sp@intainft.com
+        to: bharathi.m@intainft.com
         from: Github Actions ${{ secrets.MAIL_USERNAME }}
         #body: The Docker image intainft/im-testnetwork-bdb-cd:${{ env.CUSTOM_VERSION }} was successfully built and deployed.
         body: ${{ github.job }} job in workflow ${{ github.workflow }} of ${{ github.repository }} was build and Deployed.
@@ -103,7 +103,7 @@ jobs:
         username: ${{ secrets.MAIL_USERNAME }}
         password: ${{ secrets.MAIL_PASSWORD }}
         subject: Deployment failure in IM-UI
-        to: bharathi.m@intainft.com,narayanan.sp@intainft.com
+        to: bharathi.m@intainft.com
         from: Github Actions ${{ secrets.MAIL_USERNAME }}
         #body: The Docker image intainft/im-testnetwork-bdb-cd:${{ env.CUSTOM_VERSION }} failed to build or deploy.
         body: ${{ github.job }} job in workflow ${{ github.workflow }} of ${{ github.repository }} was build and Deployed.
